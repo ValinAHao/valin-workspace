@@ -1,0 +1,13 @@
+{
+  "name": "@zhlim/prettier",
+  "version": "0.0.0-semantic-release",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ValinAHao/valin-workspace.git",
+    "directory": "packages/prettier"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

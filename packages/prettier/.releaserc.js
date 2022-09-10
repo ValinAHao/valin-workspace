@@ -1,21 +1,16 @@
-const lib = 'lint-formatter-config';
+const lib = 'prettier';
 const rootDir = `packages/${lib}`;
 
 module.exports = {
-  extends: 'releaserc.base.js',
+  extends: '.releaserc.base.js',
   pkgRoot: `dist/${rootDir}`,
   tagFormat: lib + '-v${version}',
   commitPaths: [`${rootDir}/*`],
+  branches: ['main'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/npm',
-    [
-      '@semantic-release/changelog',
-      {
-        changlogFile: `${rootDir}/CHANGELOG.md`,
-      },
-    ],
+    '@semantic-release/changelog',
     [
       '@semantic-release/git',
       {

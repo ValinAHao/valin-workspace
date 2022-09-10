@@ -1,22 +1,22 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/lint-formatter-config/src",
+  "sourceRoot": "packages/prettier/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nrwl/js:swc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/lint-formatter-config",
-        "main": "packages/lint-formatter-config/src/index.ts",
-        "tsConfig": "packages/lint-formatter-config/tsconfig.lib.json",
-        "assets": ["packages/lint-formatter-config/*.md"]
+        "outputPath": "dist/packages/prettier",
+        "main": "packages/prettier/src/index.ts",
+        "tsConfig": "packages/prettier/tsconfig.lib.json",
+        "assets": ["packages/prettier/*.md"]
       }
     },
     "publish": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "command": "node tools/scripts/publish.mjs lint-formatter-config {args.ver} {args.tag}"
+        "command": "node tools/scripts/publish.mjs prettier {args.ver} {args.tag}"
       },
       "dependsOn": [
         {
@@ -29,25 +29,26 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/lint-formatter-config/**/*.ts"]
+        "lintFilePatterns": ["packages/prettier/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/packages/lint-formatter-config"],
+      "outputs": ["coverage/packages/prettier"],
       "options": {
-        "jestConfig": "packages/lint-formatter-config/jest.config.ts",
+        "jestConfig": "packages/prettier/jest.config.ts",
         "passWithNoTests": true
       }
     },
+
     "release": {
       "executor": "nx:run-commands",
       "outputs": [],
       "options": {
-        "command": "npx semantic-release-plus --extends ./packages/lint-formatter-config/release.config.js",
+        "command": "npx semantic-release-plus --extends ./packages/prettier/.releaserc.js",
         "parallel": false
       }
     }
   },
-  "tags": []
+  "tags": ["type:util"]
 }

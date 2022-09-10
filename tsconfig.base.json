@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@zhlim/lint-formatter-config": [
-        "packages/lint-formatter-config/src/index.ts"
-      ]
+      "@zhlim/prettier": ["packages/prettier/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
