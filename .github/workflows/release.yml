@@ -3,38 +3,40 @@ name: Workspace Release
 on:
   push:
     branches:
-      - main
-    workflow_dispatch:
-
-env:
-  HUSKY: 0
+      - master
+  workflow_dispatch:
 
 jobs:
   semantic-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout [Default Branch]
-        uses: actions/checkout@v2
-        if: ${{ github.event_name != 'pull_request' }}
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_TOKEN }}
           fetch-depth: 0
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: master
 
       - name: Install Dependencies
         run: |
           yarn install --frozen-lockfile
 
       - run: |
-          npx nx workspace-lint
-          npx nx format:check
-          npx nx affected --target lint --parallel 3
-          npx nx affected --target test --parallel 3 --ci --code-coverage
+          # npx nx workspace-lint
+          # npx nx format:check
+          # npx nx affected --target lint --parallel 3
+          # npx nx affected --target test --parallel 3 --ci --code-coverage
           npx nx affected --target build --parallel 3
 
       - name: Release
-        if: ${{ success() && (github.event_name != 'pull_request' || github.event.action == 'closed' && github.event.pull_request.merged == true) }}
+        if: ${{ success() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npx nx affected --target release --all
+          npx semantic-release-plus

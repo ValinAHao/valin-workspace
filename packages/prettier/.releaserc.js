@@ -6,18 +6,22 @@ module.exports = {
   pkgRoot: `dist/${rootDir}`,
   tagFormat: lib + '-v${version}',
   commitPaths: [`${rootDir}/*`],
-  branches: ['main'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
-    '@semantic-release/changelog',
+    [
+      '@semantic-release/changelog',
+      {
+        changelogFile: `${rootDir}/CHANGELOG.md`,
+      },
+    ],
+    '@semantic-release/npm',
     [
       '@semantic-release/git',
       {
         assets: [`${rootDir}/package.json`, `${rootDir}/CHANGELOG.md`],
         message:
-          `release(version): Release ${lib} ` +
-          '${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+          'chore(version): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
   ],

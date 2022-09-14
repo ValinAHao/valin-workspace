@@ -8,6 +8,6 @@
     "directory": "packages/prettier"
   },
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   }
 }
