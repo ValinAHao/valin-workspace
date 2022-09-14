@@ -2,7 +2,6 @@ const lib = 'prettier';
 const rootDir = `packages/${lib}`;
 
 module.exports = {
-  extends: '.releaserc.base.js',
   pkgRoot: `dist/${rootDir}`,
   tagFormat: lib + '-v${version}',
   commitPaths: [`${rootDir}/*`],
