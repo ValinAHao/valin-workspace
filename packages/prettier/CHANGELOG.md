@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ValinAHao/valin-workspace/compare/prettier-v1.1.0...prettier-v1.2.0) (2022-09-14)
+
+
+### Features
+
+* update lib ([14245a5](https://github.com/ValinAHao/valin-workspace/commit/14245a522baa9996db845792573477c26a6036cd))
+
 # [1.1.0](https://github.com/ValinAHao/valin-workspace/compare/prettier-v1.0.0...prettier-v1.1.0) (2022-09-14)
 
 
