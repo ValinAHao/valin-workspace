@@ -7301,7 +7301,7 @@ semantic-release-plus@^20.0.0:
     signale "^1.2.1"
     yargs "^16.2.0"
 
-semantic-release@^19.0.0:
+semantic-release@^19.0.0, semantic-release@^19.0.5:
   version "19.0.5"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-19.0.5.tgz#d7fab4b33fc20f1288eafd6c441e5d0938e5e174"
   integrity sha512-NMPKdfpXTnPn49FDogMBi36SiBfXkSOJqCkk0E4iWOY1tusvvgBwqUmxTX1kmlT6kIYed9YwNKD1sfPpqa5yaA==
