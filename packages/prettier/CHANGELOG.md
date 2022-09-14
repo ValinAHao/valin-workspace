@@ -1,10 +1,9 @@
 # 1.0.0 (2022-09-14)
 
-
 ### Features
 
-* update gh ([b014e37](https://github.com/ValinAHao/valin-workspace/commit/b014e3736d1a96e1f180da1dd6e27a4a94690662))
-* update lib ([f6d80c1](https://github.com/ValinAHao/valin-workspace/commit/f6d80c12700a7af2321c9be8243d02d325ab308c))
+- update gh ([b014e37](https://github.com/ValinAHao/valin-workspace/commit/b014e3736d1a96e1f180da1dd6e27a4a94690662))
+- update lib ([f6d80c1](https://github.com/ValinAHao/valin-workspace/commit/f6d80c12700a7af2321c9be8243d02d325ab308c))
 
 # [1.10.0](https://github.com/ValinAHao/valin-workspace/compare/prettier-v1.9.0...prettier-v1.10.0) (2022-09-14)
 
